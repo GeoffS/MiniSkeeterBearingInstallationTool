@@ -12,7 +12,6 @@ include <toolTop.scad>
 makeNoBearingOpposingTool = false;
 makeInsetTool = false;
 makeInsetToolLoadPathModifier = false;
-makeInsetToolTopInsert = false;
 makeBearingOpposingTool = false;
 makeOpposingToolLoadPathModifier = false;
 
