@@ -8,7 +8,8 @@ include <bearingInfo.scad>
 bearingOuterRaceSurfaceOD = bearingOD - 1;
 bearingOuterRaceSurfaceID = bearingOD - 6;
 
-boltHoleDia = 11.2; // 7/16" bolt
+// boltHoleDia = 11.2; // 7/16" bolt
+boltHoleDia = 3/8 * 25.4; // 3/8" bolt
 
 bodyOD = bigWasherOD + 2*chamferLen;
 
