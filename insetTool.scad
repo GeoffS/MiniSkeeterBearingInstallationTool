@@ -14,8 +14,8 @@ bearingSurfaceTopZ = bodyTopZ+2;
 module insetTool()
 {
   echo("insetTool()");
-  echo(str("insetTool(): bodyOD = ", bodyOD));
-  echo(str("insetTool(): bodyTopZ = ", bodyTopZ));
+  echo(str("   insetTool(): bodyOD = ", bodyOD));
+  echo(str("   insetTool(): bodyTopZ = ", bodyTopZ));
 
   tool()
   {
