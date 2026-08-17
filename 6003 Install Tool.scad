@@ -13,7 +13,7 @@ makeNoBearingOpposingTool = false;
 makeInsetTool = false;
 makeInsetToolLoadPathModifier = false;
 makeInsetToolTopInsert = false;
-makeOpposingTool = false;
+makeBearingOpposingTool = false;
 makeOpposingToolLoadPathModifier = false;
 
 module clip(delta=0)
@@ -23,7 +23,9 @@ module clip(delta=0)
 
 if(developmentRender)
 {
-  
+  // display() bearingOpposingTool();
+  // displayGhost() opposingToolLoadPathModifier();
+
   translate([-60,0,0]) 
   {
     display() bearingOpposingTool();
@@ -47,7 +49,7 @@ else
   if(makeInsetTool) insetTool();
   if(makeInsetToolLoadPathModifier) insetToolLoadPathModifier();
 
-  if(makeOpposingTool) bearingOpposingTool();
+  if(makeBearingOpposingTool) bearingOpposingTool();
 	if(makeNoBearingOpposingTool) noBearingOpposingTool();
   if(makeOpposingToolLoadPathModifier) opposingToolLoadPathModifier();
 }
