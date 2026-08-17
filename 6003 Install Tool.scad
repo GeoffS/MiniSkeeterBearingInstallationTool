@@ -15,8 +15,6 @@ makeInsetToolLoadPathModifier = false;
 makeInsetToolTopInsert = false;
 makeOpposingTool = false;
 makeOpposingToolLoadPathModifier = false;
-makeToolTopExterior = false;
-makeToolTopInsert = false;
 
 module clip(delta=0)
 {
@@ -25,28 +23,33 @@ module clip(delta=0)
 
 if(developmentRender)
 {
-  display() translate([  0,0,0]) noBearingOpposingTool();
-  display() translate([ 60,0,0]) insetTool();
-  display() translate([-60,0,0]) bearingOpposingTool();
+  
+  translate([-60,0,0]) 
+  {
+    display() bearingOpposingTool();
+    displayGhost() opposingToolLoadPathModifier();
+  }
 
-  // display() insetTool();
-  // displayGhost() insetToolLoadPathModifier();
+  translate([0,0,0]) 
+  {
+    display() noBearingOpposingTool();
+    displayGhost() opposingToolLoadPathModifier();
+  }
 
-  // offsetX = 0;
-  // displayGhost() translate([offsetX,0,4]) mirror([0,0,1]) toolTopExterior();
-  // displayGhost() translate([offsetX,0,0]) mirror([0,0,1]) toolTopInsert();
-  // displayGhost() translate([offsetX,0,-mediumWasherZ-bigWasherZ]) mediumWasher();
-  // displayGhost() translate([offsetX,0,-mediumWasherZ-bigWasherZ]) bigWasher();
+  translate([ 60,0,0])
+  {
+    display() insetTool();
+    displayGhost() insetToolLoadPathModifier();
+  }
 }
 else
 {
   if(makeInsetTool) insetTool();
   if(makeInsetToolLoadPathModifier) insetToolLoadPathModifier();
+
   if(makeOpposingTool) bearingOpposingTool();
-  if(makeOpposingToolLoadPathModifier) opposingToolLoadPathModifier();
 	if(makeNoBearingOpposingTool) noBearingOpposingTool();
-	if(makeToolTopInsert) toolTopInsert();
-	if(makeToolTopExterior) mirror([0,0,1]) toolTopExterior();
+  if(makeOpposingToolLoadPathModifier) opposingToolLoadPathModifier();
 }
 
 module mediumWasher()
