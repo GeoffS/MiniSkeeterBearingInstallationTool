@@ -25,12 +25,12 @@ module clip(delta=0)
 
 if(developmentRender)
 {
-  // display() translate([  0,0,0]) noBearingOpposingTool();
-  // display() translate([ 60,0,0]) insetTool();
-  // display() translate([-60,0,0]) bearingOpposingTool();
+  display() translate([  0,0,0]) noBearingOpposingTool();
+  display() translate([ 60,0,0]) insetTool();
+  display() translate([-60,0,0]) bearingOpposingTool();
 
-  display() insetTool();
-  displayGhost() insetToolLoadPathModifier();
+  // display() insetTool();
+  // displayGhost() insetToolLoadPathModifier();
 
   // offsetX = 0;
   // displayGhost() translate([offsetX,0,4]) mirror([0,0,1]) toolTopExterior();
