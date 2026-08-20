@@ -7,12 +7,10 @@ use <insetTool.scad>
 use <noBearingOpposingTool.scad>
 use <bearingOpposingTool.scad>
 use <opposingToolLoadPathModifier.scad>
-include <toolTop.scad>
 
 makeNoBearingOpposingTool = false;
 makeInsetTool = false;
 makeInsetToolLoadPathModifier = false;
-makeInsetToolTopInsert = false;
 makeBearingOpposingTool = false;
 makeOpposingToolLoadPathModifier = false;
 

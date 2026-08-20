@@ -1,5 +1,4 @@
 include <../OpenSCADdesigns/chamferedCylinders.scad>
-include <boltInfo.scad>
 include <printParams.scad>
 use <toolExterior.scad>
 include <bearingPlug.scad>
