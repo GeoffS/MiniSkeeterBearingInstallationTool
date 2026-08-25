@@ -27,13 +27,13 @@ if(developmentRender)
   translate([-60,0,0]) 
   {
     display() bearingOpposingTool();
-    displayGhost() opposingToolLoadPathModifier();
+    // displayGhost() opposingToolLoadPathModifier();
   }
 
   translate([0,0,0]) 
   {
     display() noBearingOpposingTool();
-    displayGhost() opposingToolLoadPathModifier();
+    // displayGhost() opposingToolLoadPathModifier();
   }
 
   translate([ 60,0,0])

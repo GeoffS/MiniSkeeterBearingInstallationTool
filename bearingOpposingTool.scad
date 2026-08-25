@@ -2,6 +2,7 @@ include <opposingToolCommon.scad>
 use <toolExterior.scad>
 use <tool.scad>
 include <washerRecess.scad>
+include <rimLipRecess.scad>
 
 module bearingOpposingTool()
 {
@@ -9,11 +10,18 @@ module bearingOpposingTool()
 
   tool()
   {
-    toolExterior(
-      bodyOD=bodyOD,
-      bodyZ=opposingToolBodyZ,
-      bodyTopSurfaceOD=bodyOD - 2
-    );
+    difference()
+    {
+      toolExterior(
+        bodyOD=bodyOD,
+        bodyZ=opposingToolBodyZ,
+        bodyTopSurfaceOD=bodyTopSurfaceOD
+      );
+      
+      rimLipRecess(
+        bearingSurfaceTopZ=opposingToolBodyZ
+      );
+    }
 
     bearingCavityPlug(opposingToolBodyZ);
   }

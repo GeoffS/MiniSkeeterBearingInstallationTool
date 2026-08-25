@@ -5,6 +5,7 @@ use <toolExterior.scad>
 use <bearingPlug.scad>
 include <washerRecess.scad>
 include <insetTool.scad>
+include <rimLipRecess.scad>
 
 module noBearingOpposingTool()
 {
@@ -23,6 +24,10 @@ module noBearingOpposingTool()
       bearingOuterRaceInsideRecess(
         bearingSurfaceTopZ=opposingToolBodyZ
       );
+
+      rimLipRecess(
+        bearingSurfaceTopZ=opposingToolBodyZ
+      );
     }
     
     plugLen = bearingThickness + 4;
@@ -32,10 +37,11 @@ module noBearingOpposingTool()
 
 module bearingOuterRaceInsideRecess(bearingSurfaceTopZ)
 {
-  chamferZ = 1;
-  translate([0,0,bearingSurfaceTopZ-chamferZ+nothing])
-    cylinder(
-      d2=bearingOuterRaceSurfaceID,
-      d1=bearingOuterRaceSurfaceID-2*chamferZ,
-      h=chamferZ);
+  recessZ = 1;
+  recessOD = bearingOD + 2;
+
+  translate([0,0,bearingSurfaceTopZ-recessZ+nothing])    
+      cylinder(
+        d=recessOD,
+        h=recessZ);
 }

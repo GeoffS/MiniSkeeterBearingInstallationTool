@@ -3,8 +3,8 @@
 // bearingOD = 35;
 // bearingThickness = 10;
 
+include <mm.scad>
 // 1623:
-mm = 25.4;
 bearingID = 5/8 * mm;
 bearingOD = (1 + 3/8) * mm;
 bearingThickness = 7/16 * mm;
