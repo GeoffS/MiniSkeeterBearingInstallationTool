@@ -16,7 +16,18 @@ makeOpposingToolLoadPathModifier = false;
 
 module clip(delta=0)
 {
-	tc([-200, -400-delta, -100], 400);
+	// tc([-200, -400+delta, -100], 400);
+
+  if(delta != 0)
+  {
+    tc([-200, -400, -100], 400);
+  }
+  else
+  {
+    tc([-200, -400+3, -100], 400);
+  }
+
+  // tc([-200, -400, -100], 400);
 }
 
 if(developmentRender)
@@ -27,13 +38,13 @@ if(developmentRender)
   translate([-60,0,0]) 
   {
     display() bearingOpposingTool();
-    // displayGhost() opposingToolLoadPathModifier();
+    displayGhost() opposingToolLoadPathModifier() noBearingOpposingTool();
   }
 
   translate([0,0,0]) 
   {
     display() noBearingOpposingTool();
-    // displayGhost() opposingToolLoadPathModifier();
+    displayGhost() opposingToolLoadPathModifier() noBearingOpposingTool();
   }
 
   translate([ 60,0,0])
@@ -41,6 +52,12 @@ if(developmentRender)
     display() insetTool();
     displayGhost() insetToolLoadPathModifier();
   }
+
+  // translate([0,0,0]) 
+  // {
+  //   displayGhost() noBearingOpposingTool();
+  //   display() opposingToolLoadPathModifier();
+  // }
 }
 else
 {
@@ -49,7 +66,7 @@ else
 
   if(makeBearingOpposingTool) bearingOpposingTool();
 	if(makeNoBearingOpposingTool) noBearingOpposingTool();
-  if(makeOpposingToolLoadPathModifier) opposingToolLoadPathModifier();
+  if(makeOpposingToolLoadPathModifier) opposingToolLoadPathModifier()  noBearingOpposingTool();;
 }
 
 module mediumWasher()

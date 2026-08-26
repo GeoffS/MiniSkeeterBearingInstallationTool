@@ -11,7 +11,7 @@ module rimLipRecess(bearingSurfaceTopZ)
 
   translate([0,0,bearingSurfaceTopZ-rimLipZ-0.5])
   {
-    translate([0,0,]) torus(ID=bearingCavityOD, OD=rimLipRecessOD);
+    translate([0,0,0]) torus(ID=bearingCavityOD, OD=rimLipRecessOD);
     difference()
     {
       cylinder(d=rimLipRecessOD, h=rimLipZ+1);
