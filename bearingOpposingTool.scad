@@ -31,8 +31,6 @@ cavityPlugChamferZ = 1;
 module bearingCavityPlug(bodyLen)
 {
   echo(str("bearingCavityPlug(bodyLen) = ", bodyLen));
-  bearingCavityOD = bearingOD - 1;
-  bearingCavityZ = bearingThickness - 3;
 
   cavityCylZ = bodyLen+bearingCavityZ-cavityPlugChamferZ;
 
