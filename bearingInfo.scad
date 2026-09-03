@@ -15,3 +15,4 @@ echo("bearingInfo.scad:");
 echo(str("   bearingID = ", bearingID, " mm"));
 echo(str("   bearingOD = ", bearingOD, " mm"));
 echo(str("   bearingThickness = ", bearingThickness, " mm"));
+echo(str("   plugLen = ", plugLen));

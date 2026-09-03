@@ -9,11 +9,10 @@ plugOD = bearingID - 2*nub;
 plugChamferZ = 2;
 plugEndChamferZ = 1;
 
-module bearingPlug(baseZ, bearingSurfaceZ, plugLen)
+module bearingPlug(baseZ, bearingSurfaceZ)
 {
   echo(str("bearingPlug: baseZ = ", baseZ));
   echo(str("bearingPlug: bearingSurfaceZ = ", bearingSurfaceZ));
-  echo(str("bearingPlug: plugLen = ", plugLen));
 
   // Top chamfer:
   translate([0,0,bearingSurfaceZ+plugLen]) cylinder(d1=plugOD, d2=plugOD-2*plugEndChamferZ, h=plugEndChamferZ);

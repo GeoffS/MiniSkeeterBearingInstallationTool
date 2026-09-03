@@ -25,7 +25,7 @@ module noBearingOpposingTool()
       );
     }
     
-    bearingPlug(opposingToolBodyZ-1, opposingToolBodyZ, plugLen);
+    bearingPlug(opposingToolBodyZ-1, opposingToolBodyZ);
   }
 }
 

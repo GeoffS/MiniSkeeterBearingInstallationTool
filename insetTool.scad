@@ -30,7 +30,7 @@ module insetTool()
       bearingOuterRaceSurfaceID=bearingOuterRaceSurfaceID
     );
 
-    bearingPlug(bodyTopZ, bearingSurfaceTopZ, plugLen);
+    bearingPlug(bodyTopZ, bearingSurfaceTopZ);
   }
 }
 
