@@ -30,7 +30,7 @@ module insetTool()
       bearingOuterRaceSurfaceID=bearingOuterRaceSurfaceID
     );
 
-    plugLen = 2*bearingThickness + 4;
+    plugLen = bearingThickness + 4;
     bearingPlug(bodyTopZ, bearingSurfaceTopZ, plugLen);
   }
 }
