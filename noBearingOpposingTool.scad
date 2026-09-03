@@ -25,7 +25,6 @@ module noBearingOpposingTool()
       );
     }
     
-    // plugLen = bearingThickness + 4;
     bearingPlug(opposingToolBodyZ-1, opposingToolBodyZ, plugLen);
   }
 }
