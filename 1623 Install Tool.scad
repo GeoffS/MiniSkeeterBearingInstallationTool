@@ -7,12 +7,15 @@ use <insetTool.scad>
 use <noBearingOpposingTool.scad>
 use <bearingOpposingTool.scad>
 use <opposingToolLoadPathModifier.scad>
+include <toolTop.scad>
 
 makeNoBearingOpposingTool = false;
 makeInsetTool = false;
 makeInsetToolLoadPathModifier = false;
 makeBearingOpposingTool = false;
 makeOpposingToolLoadPathModifier = false;
+makeToolTopExterior = false;
+makeToolTopInsert = false;
 
 module clip(delta=0)
 {
@@ -53,6 +56,16 @@ if(developmentRender)
     displayGhost() insetToolLoadPathModifier();
   }
 
+  translate([ 120,0,0])
+  {
+    display() toolTopExterior();
+  }
+
+  translate([ 120,0,0])
+  {
+    display() toolTopInsert();
+  }
+
   // translate([0,0,0]) 
   // {
   //   displayGhost() noBearingOpposingTool();
@@ -66,7 +79,9 @@ else
 
   if(makeBearingOpposingTool) bearingOpposingTool();
 	if(makeNoBearingOpposingTool) noBearingOpposingTool();
-  if(makeOpposingToolLoadPathModifier) opposingToolLoadPathModifier()  noBearingOpposingTool();;
+  if(makeOpposingToolLoadPathModifier) opposingToolLoadPathModifier()  noBearingOpposingTool();
+	if(makeToolTopInsert) toolTopInsert();
+	if(makeToolTopExterior) mirror([0,0,1]) toolTopExterior();
 }
 
 module mediumWasher()
