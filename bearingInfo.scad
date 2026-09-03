@@ -9,6 +9,8 @@ bearingID = 5/8 * mm;
 bearingOD = (1 + 3/8) * mm;
 bearingThickness = 7/16 * mm;
 
+plugLen = bearingThickness + 4;
+
 echo("bearingInfo.scad:");
 echo(str("   bearingID = ", bearingID, " mm"));
 echo(str("   bearingOD = ", bearingOD, " mm"));
